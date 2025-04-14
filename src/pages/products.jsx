@@ -1,13 +1,11 @@
 import React from 'react';
 import { products } from '../data/products';
-import { Container, Typography, Grid, Card, CardContent, CardMedia, Button, Box } from '@mui/material';
+import { Container, Typography, Grid, Card, CardContent, CardMedia, Button } from '@mui/material';
 
 const ProductsPage = () => {
 	const handleAddToOrders = (product) => {
 		let currentOrders = JSON.parse(localStorage.getItem('orders')) || [];
-
 		currentOrders.push(product);
-
 		localStorage.setItem('orders', JSON.stringify(currentOrders));
 		alert(`${product.name} has been added to your orders!`);
 	};
@@ -18,9 +16,9 @@ const ProductsPage = () => {
 				Products:
 			</Typography>
 
-			<Grid container spacing={3}>
+			<Grid container spacing={3} columns={12}>
 				{products.map((product) => (
-					<Grid item xs={12} sm={6} md={4} key={product.id}>
+					<Grid key={product.id}>
 						<Card sx={{ display: 'flex', alignItems: 'center', p: 2, borderRadius: 3 }}>
 							<CardMedia
 								component='img'

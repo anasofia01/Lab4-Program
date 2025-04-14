@@ -45,9 +45,9 @@ const MyOrdersPage = () => {
 					<Typography variant='body2'>You have no orders yet.</Typography>
 				</Paper>
 			) : (
-				<Grid container spacing={3}>
+				<Grid container spacing={3} columns={12}>
 					{orders.map((product) => (
-						<Grid item xs={12} sm={6} md={4} key={product.id}>
+						<Grid key={product.id}>
 							<Card sx={{ display: 'flex', alignItems: 'center', p: 2, borderRadius: 3 }}>
 								<CardMedia
 									component='img'
